@@ -10,8 +10,9 @@ from . import views
 
 urlpatterns = [
     path('', views.LandingPage.as_view(), name='landing'),
+    path('1', views.LandingPage1.as_view(), name='landing1'),
     path('destination/<str:country>-<str:place>/', views.DestinationPage.as_view(), name='destination'),
     path('destination/<str:country>-<str:place>', views.DestinationPage.as_view(), name='destination'),
-     path('destination/<str:country>-<str:place>/stay', views.HotelPage.as_view(), name='hotel'),
+    path('destination/<str:country>-<str:place>/stay', views.HotelPage.as_view(), name='hotel'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
