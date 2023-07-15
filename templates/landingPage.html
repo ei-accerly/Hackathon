@@ -119,20 +119,15 @@
 <body>
   <header class="navbar navbar-dark bg-dark py-4">
     <div class="container">
-      <h1 class="navbar-brand">Travel Trails</h1>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tours">Tours</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+        <h1 class="navbar-brand">Travel Trails</h1>
+        <nav>
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="http://localhost:8000/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
-    </div>
   </header>
 
   <section id="home">
@@ -165,20 +160,22 @@
               {% endfor %}
             </select>
           </div>
-          <div class="input-group mb-3">
-            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-button">
-              <span class="visually-hidden">Toggle Dropdown</span>
-            </button>
-            <select class="form-control" id="place-select">
-                <option value="Manila">Manila</option>
-                <option value="Siargao">Siargao</option>
-                <option value="Baguio">Baguio</option>
-                <option value="Palawan">Palawan</option>
-                <option value="Bohol">Bohol</option>
-            </select>
-          </div>
-          <button onclick="SubmitPlace()"> Enter </button>
-        </div>
+              <div class="input-group mb-3">
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-button">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <select class="form-control" id="place-select">
+                  <option value="Manila">Manila</option>
+                  <option value="Siargao">Siargao</option>
+                  <option value="Baguio">Baguio</option>
+                  <option value="Palawan">Palawan</option>
+                  <option value="Bohol">Bohol</option>
+                </select>
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-outline-secondary" onclick="SubmitPlace()">Enter</button>
+              </div>
+
 
       </div>
     </div>
