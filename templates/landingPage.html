@@ -129,6 +129,7 @@
             <li class="nav-item"><a class="nav-link" href="http://localhost:8000/">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#destinations" onclick="handleDestinationsClick(event)">Destinations</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#aboutus">About Us</a></li>
           </ul>
         </nav>
       </div>
@@ -143,46 +144,78 @@
         everyone.</p>
     </div>
   </section>
-
-  <section id="destinations" class="bg-light">
+  <section id="destinations">
     <div class="container">
-      <h2 class="text-center">Popular Destinations</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <div class="input-group mb-3">
-            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-button">
-              <span class="visually-hidden">Toggle Dropdown</span>
-            </button>
-            <form method="post" id="selectFromCountries">
-              {% csrf_token %} 
-            </form>
-            <select class="form-control" id="country-select">
-              {% for country in countries %}
-                {% if country == 'Philippines' %}
-                  <option value="{{ country }}">{{ country }}</option>
-                {% endif %}
-              {% endfor %}
-            </select>
+      <h2>Popular Destinations</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img src="/newyork.jpg" class="card-img-top" alt="New York">
+            <div class="card-body">
+              <h5 class="card-title">New York City</h5>
+              <p class="card-text">Experience the vibrant energy of the Big Apple with its iconic attractions and diverse cultural scene.</p>
+              <a href="" class="btn btn-primary">Learn More</a>
+            </div>
           </div>
-              <div class="input-group mb-3">
-                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-button">
-                  <span class="visually-hidden">Toggle Dropdown</span>
-                </button>
-                <select class="form-control" id="place-select">
-                  <option value="Manila">Manila</option>
-                  <option value="Siargao">Siargao</option>
-                  <option value="Baguio">Baguio</option>
-                  <option value="Palawan">Palawan</option>
-                  <option value="Bohol">Bohol</option>
-                </select>
-              </div>
-              <div class="d-grid">
-                <button class="btn btn-outline-secondary" onclick="SubmitPlace()">Enter</button>
-              </div>
-
-
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img src="/grandcanyon.jpg" class="card-img-top" alt="Grand Canyon">
+            <div class="card-body">
+              <h5 class="card-title">Grand Canyon</h5>
+              <p class="card-text">Marvel at the breathtaking beauty of one of the world's most famous natural wonders.</p>
+              <a href="" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <img src="/sanfrancisco.jpg" class="card-img-top" alt="San Francisco">
+            <div class="card-body">
+              <h5 class="card-title">San Francisco</h5>
+              <p class="card-text">Discover the unique charm of the Golden Gate City, known for its iconic landmarks and vibrant neighborhoods.</p>
+              <a href="" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    
+    <div class="container bg-light">
+      <div class="col-md-6">
+        <div class="input-group mb-3">
+          <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-button">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <form method="post" id="selectFromCountries">
+            {% csrf_token %} 
+          </form>
+          <select class="form-control" id="country-select">
+            {% for country in countries %}
+              {% if country == 'Philippines' %}
+                <option value="{{ country }}">{{ country }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+            <div class="input-group mb-3">
+              <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-button">
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <select class="form-control" id="place-select">
+                <option value="Manila">Manila</option>
+                <option value="Siargao">Siargao</option>
+                <option value="Baguio">Baguio</option>
+                <option value="Palawan">Palawan</option>
+                <option value="Bohol">Bohol</option>
+              </select>
+            </div>
+            <div class="d-grid">
+              <button class="btn btn-outline-secondary" onclick="SubmitPlace()">Enter</button>
+            </div>
+    </div>
+  </div>
+
   </section>
 
   <section id="contact">
@@ -204,6 +237,16 @@
         </div>
       </form>
     </div>
+  </section>
+  
+    <section id="aboutus">
+      <div class="container">
+        <h2 class="text-center">About Us</h2>
+        <p class="text-center">Travel Trails is a revolutionary app designed for passionate travelers seeking unforgettable adventures. With Travel Trails, you can explore the world's most captivating destinations, discover hidden gems, and create lifelong memories. Our app offers a curated selection of top-rated attractions, hotels, and restaurants, ensuring that every step of your journey is memorable. Whether you're a seasoned traveler or just starting your wanderlust journey, Travel Trails provides personalized recommendations, expert travel tips, and seamless booking options. Embark on a journey of a lifetime with Travel Trails and let your wanderlust take flight.</p>
+        <div class="text-center">
+          <a href="login" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
   </section>
 
   <footer class="bg-dark text-light py-4">

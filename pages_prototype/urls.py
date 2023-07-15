@@ -10,6 +10,8 @@ from . import views
 
 urlpatterns = [
     path('', views.LandingPage.as_view(), name='landing'),
+    path('login/', views.LoginPage.as_view(), name='login'),
+    path('login', views.LoginPage.as_view(), name='login'),
     path('destination/<str:country>-<str:place>/', views.DestinationPage.as_view(), name='destination'),
     path('destination/<str:country>-<str:place>', views.DestinationPage.as_view(), name='destination'),
     path('destination/<str:country>-<str:place>/stay', views.HotelPage.as_view(), name='hotel'),

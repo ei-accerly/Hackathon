@@ -73,3 +73,7 @@ class DestinationPage(TemplateView):
     
 class HotelPage(TemplateView):
     template_name = 'placeView.html'
+
+class LoginPage(TemplateView):
+    template_name = 'loginPage.html'
+
