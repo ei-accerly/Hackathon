@@ -222,6 +222,7 @@
           <li class="nav-item"><a class="nav-link" href="#places-to-stay">Places to Stay</a></li>
           <li class="nav-item"><a class="nav-link" href="#popular-foods">Popular Foods</a></li>
           <li class="nav-item"><a class="nav-link" href="#flight-schedule">Flight Schedule</a></li>
+          <li class="nav-item"><a class="nav-link" href="#travel-options">Travel Options</a></li>
         </ul>
       </nav>
     </div>
@@ -489,52 +490,46 @@
     </div>
   </section>
 
-  <section id="flight-schedule" class="bg-light">
+  <section id="travel-options" class="bg-light">
     <div class="container">
-      <h2 class="text-center mb-4">Flight Schedule</h2>
-
+      <h2 class="text-center mb-4">Travel Options</h2>
+  
       <div class="row">
         <div class="col-md-4">
-          <div class="flight-card">
+          <div class="travel-option-card">
             <div class="card shadow-sm">
+              <img src="/air.png" alt="Air Travel" class="card-img-top">
               <div class="card-body">
-                <h5 class="card-title">Flight 1</h5>
-                <p class="card-text">Departure: City A</p>
-                <p class="card-text">Destination: City B</p>
-                <p class="card-text">Departure Time: 10:00 AM</p>
-                <p class="card-text">Arrival Time: 12:00 PM</p>
-                <p class="card-text">Price: $200</p>
-                <a href="#" class="btn btn-primary">Book Flight</a>
+                <h5 class="card-title">Air Travel</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                  Praesent libero.</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#airTravelModal">View Flights</button>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="flight-card">
+          <div class="travel-option-card">
             <div class="card shadow-sm">
+              <img src="/sea.png" alt="Sea Travel" class="card-img-top">
               <div class="card-body">
-                <h5 class="card-title">Flight 2</h5>
-                <p class="card-text">Departure: City B</p>
-                <p class="card-text">Destination: City A</p>
-                <p class="card-text">Departure Time: 2:00 PM</p>
-                <p class="card-text">Arrival Time: 4:00 PM</p>
-                <p class="card-text">Price: $180</p>
-                <a href="#" class="btn btn-primary">Book Flight</a>
+                <h5 class="card-title">Sea Travel</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                  Praesent libero.</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#seaTravelModal">View Ferries</button>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="flight-card">
+          <div class="travel-option-card">
             <div class="card shadow-sm">
+              <img src="/land.png" alt="Land Travel" class="card-img-top">
               <div class="card-body">
-                <h5 class="card-title">Flight 3</h5>
-                <p class="card-text">Departure: City C</p>
-                <p class="card-text">Destination: City D</p>
-                <p class="card-text">Departure Time: 8:00 AM</p>
-                <p class="card-text">Arrival Time: 10:00 AM</p>
-                <p class="card-text">Price: $250</p>
-                <a href="#" class="btn btn-primary">Book Flight</a>
+                <h5 class="card-title">Land Travel</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                  Praesent libero.</p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#landTravelModal">View Trains/Buses</button>
               </div>
             </div>
           </div>
@@ -543,6 +538,79 @@
     </div>
   </section>
 
+  <!-- Air Travel Modal -->
+<div class="modal fade" id="airTravelModal" tabindex="-1" aria-labelledby="airTravelModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="airTravelModalLabel">Air Travel Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Available Flights:</p>
+          <ul>
+            <li>Flight 1: Departure - Destination, Departure Time - Arrival Time, Price</li>
+            <li>Flight 2: Departure - Destination, Departure Time - Arrival Time, Price</li>
+            <li>Flight 3: Departure - Destination, Departure Time - Arrival Time, Price</li>
+          </ul>
+          <!-- Add more content as needed -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Sea Travel Modal -->
+  <div class="modal fade" id="seaTravelModal" tabindex="-1" aria-labelledby="seaTravelModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="seaTravelModalLabel">Sea Travel Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Available Ferries:</p>
+          <ul>
+            <li>Ferry 1: Departure - Destination, Departure Time - Arrival Time, Price</li>
+            <li>Ferry 2: Departure - Destination, Departure Time - Arrival Time, Price</li>
+            <li>Ferry 3: Departure - Destination, Departure Time - Arrival Time, Price</li>
+          </ul>
+          <!-- Add more content as needed -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Land Travel Modal -->
+  <div class="modal fade" id="landTravelModal" tabindex="-1" aria-labelledby="landTravelModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="landTravelModalLabel">Land Travel Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Available Trains/Buses:</p>
+          <ul>
+            <li>Train/Bus 1: Departure - Destination, Departure Time - Arrival Time, Price</li>
+            <li>Train/Bus 2: Departure - Destination, Departure Time - Arrival Time, Price</li>
+            <li>Train/Bus 3: Departure - Destination, Departure Time - Arrival Time, Price</li>
+          </ul>
+          <!-- Add more content as needed -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
   <footer class="bg-dark text-light py-4">
     <div class="container">
       <p>&copy; 2023 Travel Trails. All rights reserved.</p>
