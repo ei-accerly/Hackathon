@@ -6,9 +6,6 @@ import requests
 
 class LandingPage(TemplateView):
     template_name = 'landingPage.html'
-
-class DestinationPage(TemplateView):
-    template_name = 'destinationPage.html'
     def get(self, request):
         url = "https://restcountries.com/v3.1/all"
 
@@ -72,11 +69,16 @@ class DestinationPage(TemplateView):
             print(country)
             articles = fetch_articles(country, place)
             foods = fetch_popular_food(country, place)
-            for food in foods:
-                print(food)
             for article in articles:
                 title = article['title']
                 description = article['description']
                 print(f"Title: {title}")
                 print(f"Description: {description}")
                 print("-----")
+
+        return render(request,'destinationPage.html',{'foods':foods})
+
+
+class DestinationPage(TemplateView):
+    template_name = 'destinationPage.html'
+    
