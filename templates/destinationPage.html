@@ -221,7 +221,7 @@
           <li class="nav-item"><a class="nav-link" href="http://localhost:8000/">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#places-to-stay">Places to Stay</a></li>
           <li class="nav-item"><a class="nav-link" href="#popular-foods">Popular Foods</a></li>
-          <li class="nav-item"><a class="nav-link" href="#flight-schedule">Flight Schedule</a></li>
+          <li class="nav-item"><a class="nav-link" href="#festivals">Festivals</a></li>
           <li class="nav-item"><a class="nav-link" href="#travel-options">Travel Options</a></li>
         </ul>
       </nav>
@@ -501,7 +501,7 @@
                 <h5 class="card-title">Festival Name 1</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
                   Praesent libero.</p>
-                <a href="#" class="btn btn-primary">Learn More</a>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#festivalModal1">Learn More</button>
               </div>
             </div>
           </div>
@@ -514,7 +514,7 @@
                 <h5 class="card-title">Festival Name 2</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
                   Praesent libero.</p>
-                <a href="#" class="btn btn-primary">Learn More</a>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#festivalModal2">Learn More</button>
               </div>
             </div>
           </div>
@@ -527,7 +527,7 @@
                 <h5 class="card-title">Festival Name 3</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
                   Praesent libero.</p>
-                <a href="#" class="btn btn-primary">Learn More</a>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#festivalModal3">Learn More</button>
               </div>
             </div>
           </div>
@@ -535,6 +535,69 @@
       </div>
     </div>
   </section>
+  
+  <!-- Festival Modal 1 -->
+  <div class="modal fade" id="festivalModal1" tabindex="-1" aria-labelledby="festivalModal1Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="festivalModal1Label">Festival Name 1</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Date: June 15th - June 20th, 2023</p>
+          <p>Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit erat eget eros efficitur, et
+            pulvinar nulla fringilla. Integer auctor neque vel arcu commodo, sed condimentum enim finibus. Suspendisse sed
+            purus ut urna dictum dignissim.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Festival Modal 2 -->
+  <div class="modal fade" id="festivalModal2" tabindex="-1" aria-labelledby="festivalModal2Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="festivalModal2Label">Festival Name 2</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Date: July 10th - July 15th, 2023</p>
+          <p>Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit erat eget eros efficitur, et
+            pulvinar nulla fringilla. Integer auctor neque vel arcu commodo, sed condimentum enim finibus. Suspendisse sed
+            purus ut urna dictum dignissim.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Festival Modal 3 -->
+  <div class="modal fade" id="festivalModal3" tabindex="-1" aria-labelledby="festivalModal3Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="festivalModal3Label">Festival Name 3</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Date: August 5th - August 10th, 2023</p>
+          <p>Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit erat eget eros efficitur, et
+            pulvinar nulla fringilla. Integer auctor neque vel arcu commodo, sed condimentum enim finibus. Suspendisse sed
+            purus ut urna dictum dignissim.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   
 
   <section id="travel-options" class="bg-light">

@@ -3,7 +3,6 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
-
   <title>Destination Page</title>
   <style>
     body {
@@ -109,13 +108,55 @@
       color: #ffffff;
       background-color: #007bff;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
     }
 
     .button i {
       margin-right: 5px;
     }
+
+    .payment-modal .modal-dialog {
+      max-width: 400px;
+    }
+
+    .payment-modal .modal-header {
+      border-bottom: none;
+    }
+
+    .payment-modal .modal-title {
+      font-size: 24px;
+      color: #333;
+      text-align: center;
+    }
+
+    .payment-modal .modal-body {
+      text-align: center;
+    }
+
+    .payment-modal .modal-body img {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .payment-modal .modal-footer {
+      border-top: none;
+      justify-content: center;
+    }
+
+    .payment-modal .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      color: #333;
+      opacity: 0.8;
+      cursor: pointer;
+    }
   </style>
-  </head>
+</head>
 <body>
   <div class="container">
     <div class="picture">
@@ -145,19 +186,36 @@
     </div>
 
     <div class="buttons-container">
-      <button class="button">
-        <i class="bi bi-save"></i> Save Place
-      </button>
-      <button class="button">
-        <i class="bi bi-files"></i> Copy Name
-      </button>
-      <button class="button">
-        <i class="bi bi-map"></i> Map View
-      </button>
-      <a href="stay" class="button">
-        <i class="bi bi-calendar-plus"></i> Make Reservation
-      </a>
+        <button class="button">
+          <i class="bi bi-save"></i> Save Place
+        </button>
+        <button class="button">
+          <i class="bi bi-files"></i> Copy Name
+        </button>
+        <button class="button">
+          <i class="bi bi-map"></i> Map View
+        </button>
+        <button class="button" data-bs-toggle="modal" data-bs-target="#paymentModal">
+          <i class="bi bi-calendar-plus"></i> Make Reservation ($100)
+        </button>
+      </div>      
+  </div>
+
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content payment-modal">
+        <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-title" id="paymentModalLabel">Select Payment Option</div>
+        <div class="modal-body">
+          <img src="/gcash.png" alt="GCash">
+          <img src="/paymaya.png" alt="PayMaya">
+          <img src="/creditcard.png" alt="Credit Card">
+          <img src="/paypal.png" alt="PayPal">
+        </div>
+      </div>
     </div>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
