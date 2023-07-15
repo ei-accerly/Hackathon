@@ -11,5 +11,6 @@ from . import views
 urlpatterns = [
     path('', views.LandingPage.as_view(), name='landing'),
     path('destination/<str:country>-<str:place>/', views.DestinationPage.as_view(), name='destination'),
+    path('destination/<str:country>-<str:place>', views.DestinationPage.as_view(), name='destination'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

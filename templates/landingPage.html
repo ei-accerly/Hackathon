@@ -123,7 +123,7 @@
         <nav>
           <ul class="nav">
             <li class="nav-item"><a class="nav-link" href="http://localhost:8000/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+            <li class="nav-item"><a class="nav-link" href="#destinations" onclick="handleDestinationsClick(event)">Destinations</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -212,7 +212,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/js/bootstrap-select.min.js"></script>
   <script>
-
   function SubmitPlace() {
     var selectCountry = document.getElementById('country-select');
     var selectPlace = document.getElementById('place-select');
@@ -225,7 +224,7 @@
       method: 'POST',
       body: formData
     }).then(function() {
-      window.location.href = window.location.href + "destination/"+selectCountry.value+"-"+selectPlace.value+"/"
+      window.location.href = "/destination/"+selectCountry.value+"-"+selectPlace.value+"/"
     });
 
   }
