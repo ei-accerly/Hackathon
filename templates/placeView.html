@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Destination Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -10,12 +13,15 @@
       padding: 0;
     }
 
-    .container {
+    .center-container {
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
       max-width: 960px;
-      margin: 0 auto;
       padding: 40px;
       background-color: #ffffff;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -23,18 +29,20 @@
     }
 
     .picture {
-      flex: 0 0 200px;
+      text-align: center;
     }
 
     .picture img {
       width: 100%;
       height: auto;
-      border-radius: 8px;
+      max-height: 400px;
+      border-radius: 50%;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .description {
-      flex: 1;
+      text-align: center;
+      margin-top: 20px;
     }
 
     .description h2 {
@@ -49,79 +57,86 @@
       color: #666666;
     }
 
-    .reviews {
-      flex: 1;
+    .actions {
+      text-align: center;
+      margin-top: 20px;
     }
 
-    .reviews h2 {
+    .action-btn {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
       font-size: 24px;
-      margin-bottom: 10px;
-      color: #333333;
+      line-height: 60px;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .rating {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .rating .stars {
-      color: #f2b01e;
-      margin-right: 5px;
-    }
-
-    .rating .score {
-      font-size: 16px;
-      color: #666666;
-    }
-
-    .reviews ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .reviews li {
-      font-size: 16px;
-      margin-bottom: 5px;
-      color: #666666;
+    .action-btn:hover {
+      transform: scale(1.1);
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-<body>
-  <div class="container">
-    <div class="picture">
-      <img src="/hotel1.jpg" alt="Destination Image">
-    </div>
-    <div class="description">
-      <h2>Description</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit erat eget eros efficitur, et pulvinar nulla fringilla. Integer auctor neque vel arcu commodo, sed condimentum enim finibus. Suspendisse sed purus ut urna dictum dignissim.</p>
-    </div>
-  </div>
-  <div class="container">
-    <div class="reviews">
-      <h2>Reviews</h2>
-      <div class="rating">
-        <span class="stars"><i class="fas fa-star"></i></span>
-        <span class="stars"><i class="fas fa-star"></i></span>
-        <span class="stars"><i class="fas fa-star"></i></span>
-        <span class="stars"><i class="fas fa-star"></i></span>
-        <span class="stars"><i class="fas fa-star-half-alt"></i></span>
-        <span class="score">4.5/5</span>
-      </div>
-      <ul>
-        <li>Review 1</li>
-        <li>Review 2</li>
-        <li>Review 3</li>
-      </ul>
-    </div>
 
-    <div class="text-center mb-lg-2">
-        <a href="stay" class="btn btn-primary btn-block">
-          <i class="bi bi-calendar-plus"></i> Make Reservation
-        </a>
+<body>
+  <div class="center-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 picture">
+          <img src="/hotel1.jpg" alt="Destination Image">
+        </div>
+        <div class="col-lg-12">
+          <div class="description">
+            <h2>Description</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit erat eget eros efficitur, et pulvinar nulla fringilla. Integer auctor neque vel arcu commodo, sed condimentum enim finibus. Suspendisse sed purus ut urna dictum dignissim.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 actions">
+          <button onclick="savePlace()" class="action-btn">
+            <i class="far fa-bookmark"></i>
+          </button>
+          <button onclick="copyName()" class="action-btn">
+            <i class="far fa-copy"></i>
+          </button>
+          <button onclick="openMapView()" class="action-btn">
+            <i class="fas fa-map-marked-alt"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 text-center mt-3 mb-3">
+          <a href="stay" class="btn btn-primary">
+            <i class="bi bi-calendar-plus"></i> Make Reservation
+          </a>
+        </div>
+      </div>
     </div>
   </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function savePlace() {
+      // Add your save place logic here
+      alert("Place saved!");
+    }
+
+    function copyName() {
+      // Add your copy name logic here
+      const name = document.querySelector("h2").textContent;
+      navigator.clipboard.writeText(name);
+      alert("Name copied!");
+    }
+
+    function openMapView() {
+      // Add your map view logic here
+      alert("Opening map view...");
+    }
+  </script>
 </body>
 </html>
