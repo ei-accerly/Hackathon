@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Destination Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .picture {
+      flex: 0 0 200px;
+    }
+
+    .picture img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .description {
+      flex: 1;
+    }
+
+    .description h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333333;
+    }
+
+    .description p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #666666;
+    }
+
+    .reviews {
+      flex: 1;
+    }
+
+    .reviews h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333333;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .rating .stars {
+      color: #f2b01e;
+      margin-right: 5px;
+    }
+
+    .rating .score {
+      font-size: 16px;
+      color: #666666;
+    }
+
+    .reviews ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .reviews li {
+      font-size: 16px;
+      margin-bottom: 5px;
+      color: #666666;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="picture">
+      <img src="/hotel1.jpg" alt="Destination Image">
+    </div>
+    <div class="description">
+      <h2>Description</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit erat eget eros efficitur, et pulvinar nulla fringilla. Integer auctor neque vel arcu commodo, sed condimentum enim finibus. Suspendisse sed purus ut urna dictum dignissim.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="reviews">
+      <h2>Reviews</h2>
+      <div class="rating">
+        <span class="stars"><i class="fas fa-star"></i></span>
+        <span class="stars"><i class="fas fa-star"></i></span>
+        <span class="stars"><i class="fas fa-star"></i></span>
+        <span class="stars"><i class="fas fa-star"></i></span>
+        <span class="stars"><i class="fas fa-star-half-alt"></i></span>
+        <span class="score">4.5/5</span>
+      </div>
+      <ul>
+        <li>Review 1</li>
+        <li>Review 2</li>
+        <li>Review 3</li>
+      </ul>
+    </div>
+
+    <div class="text-center mb-lg-2">
+        <a href="stay" class="btn btn-primary btn-block">
+          <i class="bi bi-calendar-plus"></i> Make Reservation
+        </a>
+    </div>
+  </div>
+</body>
+</html>

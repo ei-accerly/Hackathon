@@ -224,7 +224,7 @@
       method: 'POST',
       body: formData
     }).then(function() {
-      window.location.href = "/destination/"+selectCountry.value+"-"+selectPlace.value+"/"
+      window.location.href = "/destination/"+selectCountry.value.toLowerCase()+"-"+selectPlace.value.toLowerCase()+"/"
     });
 
   }

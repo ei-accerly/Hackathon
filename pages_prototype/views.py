@@ -71,3 +71,5 @@ class DestinationPage(TemplateView):
         article = fetch_articles(country, place)
         return render(request, 'destinationPage.html', context)
     
+class HotelPage(TemplateView):
+    template_name = 'placeView.html'
