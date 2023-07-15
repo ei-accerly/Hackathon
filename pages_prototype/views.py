@@ -48,14 +48,13 @@ class LandingPage(TemplateView):
             return []
 
         def fetch_articles(country, query):
+            print(country)
             query = "Tourism in " + query
-            print(query)
             api_key = "a66fd9d712964e8b9e35342520764d7e"
             url = f"https://newsapi.org/v2/top-headlines?country={country}&q={query}&apiKey={api_key}"
 
             response = requests.get(url)
             data = response.json()
-            print(data)
             if data['status'] == 'ok':
                 articles = data['articles']
                 return articles
