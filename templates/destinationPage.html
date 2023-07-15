@@ -153,7 +153,6 @@
       border-radius: 8px;
     }
 
-    
     .flight-card {
       margin-bottom: 2rem;
     }
@@ -192,30 +191,147 @@
     }
 
     .hotel-image {
-    width: 100%; /* Adjust the width as needed */
-    height: auto; /* Preserve the aspect ratio */
-  }
+      width: 100%;
+      height: auto;
+    }
+
+    .map-container {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      margin-bottom: 2rem;
+    }
+
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   </style>
 </head>
 
 <body>
   <header class="navbar navbar-dark bg-dark py-4">
     <div class="container">
-        <h1 class="navbar-brand">Travel Trails</h1>
-        <nav>
-          <ul class="nav">
-            <li class="nav-item"><a class="nav-link" href="http://localhost:8000/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#places-to-stay">Places to Stay</a></li>
-            <li class="nav-item"><a class="nav-link" href="#popular-foods">Popular Foods</a></li>
-            <li class="nav-item"><a class="nav-link" href="#flight-schedule">Flight Schedule</a></li>
-          </ul>
-        </nav>
-      </div>
+      <h1 class="navbar-brand">Travel Trails</h1>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="http://localhost:8000/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#places-to-stay">Places to Stay</a></li>
+          <li class="nav-item"><a class="nav-link" href="#popular-foods">Popular Foods</a></li>
+          <li class="nav-item"><a class="nav-link" href="#flight-schedule">Flight Schedule</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <section id="destination" class="bg-light">
     <div class="container">
       <h2>{{country}}</h2>
+
+      <section id="tourist-spots" class="bg-light">
+        <div class="container">
+          <h2>Tourist Spots</h2>
+      
+          <div id="tourist-spots-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="spot-card">
+                      <div class="card">
+                        <img src="/spot1.jpg" alt="Tourist Spot 1" class="spot-image">
+                        <div class="card-body">
+                          <h5 class="card-title">White Beach, Boracay</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                            Praesent libero.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="spot-card">
+                      <div class="card">
+                        <img src="/spot2.jpg" alt="Tourist Spot 2" class="spot-image">
+                        <div class="card-body">
+                          <h5 class="card-title">Manila Historical Sightseeing Tour</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                            Praesent libero.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="spot-card">
+                      <div class="card">
+                        <img src="/spot3.jpg" alt="Tourist Spot 3" class="spot-image">
+                        <div class="card-body">
+                          <h5 class="card-title">Mayon Volcano, Albay</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                            Praesent libero.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="spot-card">
+                      <div class="card">
+                        <img src="/spot4.jpg" alt="Tourist Spot 4" class="spot-image">
+                        <div class="card-body">
+                          <h5 class="card-title">Shipwreck Diving, Coron</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                            Praesent libero.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="spot-card">
+                      <div class="card">
+                        <img src="/spot5.jpg" alt="Tourist Spot 5" class="spot-image">
+                        <div class="card-body">
+                          <h5 class="card-title">Chocolate Hills, Bohol</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                            Praesent libero.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="spot-card">
+                      <div class="card">
+                        <img src="/spot6.jpg" alt="Tourist Spot 6" class="spot-image">
+                        <div class="card-body">
+                          <h5 class="card-title">Underground River Tour, Puerto Princesa</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                            Praesent libero.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <button class="carousel-control-prev" type="button" data-bs-target="#tourist-spots-carousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#tourist-spots-carousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      
 
       <div class="container article-container">
         <h3>Discover the Beauty of {{place}}</h3>
@@ -227,6 +343,7 @@
           ullamcorper. Nulla quis odio commodo, viverra massa et, sagittis velit. Integer sit amet sagittis dui, id
           cursus metus. Praesent nec turpis id urna euismod venenatis. Vivamus in mauris ut velit pellentesque
           pellentesque eu vel odio. Nulla a metus dictum, vestibulum nunc sed, lacinia nunc.</p>
+      </div>
     </div>
   </section>
 
@@ -251,11 +368,13 @@
                       <i class="bi bi-calendar-plus"></i> Make Reservation
                     </a>
                   </div>
-                  <div class="map">
+                  <div class="map-container">
                     <h5 class="card-title">Location</h5>
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d386786.0901079783!2d-74.25986522291526!3d40.69714942290394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sph!4v1626361268762!5m2!1sen!2sph"
-                      allowfullscreen></iframe>
+                    <div class="map">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d386786.0901079783!2d-74.25986522291526!3d40.69714942290394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sph!4v1626361268762!5m2!1sen!2sph"
+                        allowfullscreen></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -279,11 +398,13 @@
                       <i class="bi bi-calendar-plus"></i> Make Reservation
                     </a>
                   </div>
-                  <div class="map">
+                  <div class="map-container">
                     <h5 class="card-title">Location</h5>
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d386786.0901079783!2d-74.25986522291526!3d40.69714942290394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sph!4v1626361268762!5m2!1sen!2sph"
-                      allowfullscreen></iframe>
+                    <div class="map">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d386786.0901079783!2d-74.25986522291526!3d40.69714942290394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sph!4v1626361268762!5m2!1sen!2sph"
+                        allowfullscreen></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -306,11 +427,13 @@
                       <i class="bi bi-calendar-plus"></i> Make Reservation
                     </a>
                   </div>
-                  <div class="map">
+                  <div class="map-container">
                     <h5 class="card-title">Location</h5>
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d386786.0901079783!2d-74.25986522291526!3d40.69714942290394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sph!4v1626361268762!5m2!1sen!2sph"
-                      allowfullscreen></iframe>
+                    <div class="map">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d386786.0901079783!2d-74.25986522291526!3d40.69714942290394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sph!4v1626361268762!5m2!1sen!2sph"
+                        allowfullscreen></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -369,7 +492,7 @@
   <section id="flight-schedule" class="bg-light">
     <div class="container">
       <h2 class="text-center mb-4">Flight Schedule</h2>
-  
+
       <div class="row">
         <div class="col-md-4">
           <div class="flight-card">
@@ -419,7 +542,6 @@
       </div>
     </div>
   </section>
-  
 
   <footer class="bg-dark text-light py-4">
     <div class="container">
@@ -441,7 +563,6 @@
       });
     });
   </script>
-
 </body>
 
 </html>
