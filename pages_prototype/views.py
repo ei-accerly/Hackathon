@@ -5,3 +5,6 @@ from django.views.generic import TemplateView
 
 class LandingPage(TemplateView):
     template_name = 'landingPage.html'
+
+class DestinationPage(TemplateView):
+    template_name = 'destinationPage.html'
