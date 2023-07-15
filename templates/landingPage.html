@@ -139,7 +139,9 @@
         </nav>
       </div>
   </header>
-
+  <form method="post" id="selectFromCountries">
+    {% csrf_token %}  
+  </form>
   <section id="home">
     <div class="container mb-3">
       <h2 class="text-center">Popular Destinations</h2>
