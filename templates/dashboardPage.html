@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .card {
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      margin-bottom: 10px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .button {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Dashboard</h2>
+
+    <div class="card">
+      <h3 class="card-title">History Trips</h3>
+      <div class="card-text">
+        <ul>
+          <li>Trip 1</li>
+          <li>Trip 2</li>
+          <li>Trip 3</li>
+        </ul>
+      </div>
+      <div class="button-container">
+        <a href="history-trips" class="btn btn-primary button">View All</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">Profile</h3>
+      <div class="card-text">
+        <p>Name: John Doe</p>
+        <p>Email: john.doe@example.com</p>
+        <p>Location: New York</p>
+      </div>
+      <div class="button-container">
+        <a href="edit-profile" class="btn btn-primary button">Edit Profile</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 class="card-title">Suggested Places to Travel</h3>
+      <div class="card-text">
+        <ul>
+          <li>Place 1</li>
+          <li>Place 2</li>
+          <li>Place 3</li>
+        </ul>
+      </div>
+      <div class="button-container">
+        <a href="suggested-places" class="btn btn-primary button">Explore More</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
