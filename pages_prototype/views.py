@@ -7,6 +7,8 @@ import requests
 class LandingPage(TemplateView):
     template_name = 'landingPage.html'
 
+class DestinationPage(TemplateView):
+    template_name = 'destinationPage.html'
     def get(self, request):
         url = "https://restcountries.com/v3.1/all"
 
