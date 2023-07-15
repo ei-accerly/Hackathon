@@ -108,6 +108,11 @@
       margin: 0;
       font-size: 0.9rem;
     }
+    .darker-option {
+      background-color: lightgrey; /* Set the desired darker background color */
+      color: black; /* Set the text color for the darker option */
+      cursor: not-allowed;
+    }
   </style>
 </head>
 
@@ -146,29 +151,33 @@
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="input-group mb-3">
-            <button type="button" class="btn btn-outline-secondary">Search</button>
-            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-button">
               <span class="visually-hidden">Toggle Dropdown</span>
             </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">country 1</a></li>
-              <li><a class="dropdown-item" href="#">country 2</a></li>
-              <li><a class="dropdown-item" href="#">country 3</a></li>
-            </ul>
-            <input type="text" class="form-control text-center" placeholder="search country" aria-label="Text input with segmented dropdown button">
+            <form method="post" id="selectFromCountries">
+              {% csrf_token %} 
+            </form>
+            <select class="form-control" id="country-select">
+              {% for country in countries %}
+                {% if country == 'Philippines' %}
+                  <option value="{{ country }}">{{ country }}</option>
+                {% endif %}
+              {% endfor %}
+            </select>
           </div>
           <div class="input-group mb-3">
-            <button type="button" class="btn btn-outline-secondary">Search</button>
-            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-button">
               <span class="visually-hidden">Toggle Dropdown</span>
             </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">destination 1</a></li>
-              <li><a class="dropdown-item" href="#">destination 2</a></li>
-              <li><a class="dropdown-item" href="#">destination 3</a></li>
-            </ul>
-            <input type="text" class="form-control text-center" placeholder="search destination" aria-label="Text input with segmented dropdown button">
+            <select class="form-control" id="place-select">
+                <option value="Manila">Manila</option>
+                <option value="Siargao">Siargao</option>
+                <option value="Baguio">Baguio</option>
+                <option value="Palawan">Palawan</option>
+                <option value="Bohol">Bohol</option>
+            </select>
           </div>
+          <button onclick="SubmitPlace()"> Enter </button>
         </div>
 
       </div>
@@ -207,6 +216,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/js/bootstrap-select.min.js"></script>
   <script>
 
+  function SubmitPlace() {
+    var selectCountry = document.getElementById('country-select');
+    var selectPlace = document.getElementById('place-select');
+    var myForm = document.querySelector("#selectFromCountries");
+    var formData = new FormData(myForm);
+    formData.append('choose_country', selectCountry.value)
+    formData.append('place', selectPlace.value)
+    
+    fetch('', {
+      method: 'POST',
+      body: formData
+    }).then(function() {
+    });
+
+  }
   </script>
 </body>
 
