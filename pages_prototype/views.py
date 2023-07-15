@@ -20,7 +20,11 @@ class LandingPage(TemplateView):
         countries_with_tourist_spots.append("Philippines")
         return render(request,'landingPage.html',{'countries':countries_with_tourist_spots})
 
-    def post(self, request):
+
+class DestinationPage(TemplateView):
+    template_name = 'destinationPage.html'
+
+    def get(self, request, country, place):
         def fetch_popular_food(country, city):
             api_key = "Q2-GLImBqseGs8AIRNI4Vxayyhxul90CWrZgfEyvLa9o-qv59S-ADQMxgAbHXL9P_1PuQBvVbM9SzdfMzH7EQntdh4_K1kD6FotzNm8T29MHkGKUvvO9DPwAswuyZHYx"
             url = f"https://api.yelp.com/v3/businesses/search"
@@ -47,7 +51,6 @@ class LandingPage(TemplateView):
             return []
 
         def fetch_articles(country, query):
-            print(country)
             query = "Tourism in " + query
             api_key = "a66fd9d712964e8b9e35342520764d7e"
             url = f"https://newsapi.org/v2/top-headlines?country={country}&q={query}&apiKey={api_key}"
@@ -60,25 +63,11 @@ class LandingPage(TemplateView):
 
             return []
         # Display the fetched articles
-
-        if request.POST.get('choose_country'):
-
-            country = request.POST['choose_country']
-            place = request.POST['place']
-            print(place)
-            print(country)
-            articles = fetch_articles(country, place)
-            foods = fetch_popular_food(country, place)
-            for article in articles:
-                title = article['title']
-                description = article['description']
-                print(f"Title: {title}")
-                print(f"Description: {description}")
-                print("-----")
-
-        return render(request,'destinationPage.html',{'foods':foods})
-
-
-class DestinationPage(TemplateView):
-    template_name = 'destinationPage.html'
+        context = {
+            'country': country,
+            'place':place
+        }
+        foods = fetch_popular_food(country, place)
+        article = fetch_articles(country, place)
+        return render(request, 'destinationPage.html', context)
     

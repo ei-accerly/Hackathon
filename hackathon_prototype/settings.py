@@ -119,7 +119,6 @@ USE_TZ = True
 MEDIA_URL = ''
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
-
 STATIC_URL = 'static/'
 STATIC_ROOT = 'pages_prototype/static/'
 # Default primary key field type
