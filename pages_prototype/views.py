@@ -6,9 +6,6 @@ import requests
 
 class LandingPage(TemplateView):
     template_name = 'landingPage.html'
-
-class DestinationPage(TemplateView):
-    template_name = 'destinationPage.html'
     def get(self, request):
         url = "https://restcountries.com/v3.1/all"
 
@@ -50,14 +47,13 @@ class DestinationPage(TemplateView):
             return []
 
         def fetch_articles(country, query):
+            print(country)
             query = "Tourism in " + query
-            print(query)
             api_key = "a66fd9d712964e8b9e35342520764d7e"
             url = f"https://newsapi.org/v2/top-headlines?country={country}&q={query}&apiKey={api_key}"
 
             response = requests.get(url)
             data = response.json()
-            print(data)
             if data['status'] == 'ok':
                 articles = data['articles']
                 return articles
@@ -73,11 +69,16 @@ class DestinationPage(TemplateView):
             print(country)
             articles = fetch_articles(country, place)
             foods = fetch_popular_food(country, place)
-            for food in foods:
-                print(food)
             for article in articles:
                 title = article['title']
                 description = article['description']
                 print(f"Title: {title}")
                 print(f"Description: {description}")
                 print("-----")
+
+        return render(request,'destinationPage.html',{'foods':foods})
+
+
+class DestinationPage(TemplateView):
+    template_name = 'destinationPage.html'
+    
