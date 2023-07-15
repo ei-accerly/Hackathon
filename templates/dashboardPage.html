@@ -9,36 +9,39 @@
       font-size: 16px;
       line-height: 1.6;
       background-color: #f8f9fa;
+      padding-top: 40px;
     }
 
     .container {
       max-width: 960px;
       margin: 0 auto;
-      padding: 40px;
+      padding: 0 20px;
     }
 
     h2 {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       font-size: 24px;
       font-weight: bold;
+      text-align: center;
     }
 
     .card {
-      margin-bottom: 20px;
+      height: 100%;
       padding: 20px;
       background-color: #fff;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
+      margin-bottom: 1rem;
     }
 
     .card-title {
       font-size: 20px;
       font-weight: bold;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .card-text {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .button-container {
@@ -49,49 +52,135 @@
     .button {
       margin-left: 10px;
     }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .section-content {
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Travel Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
-    <h2>Dashboard</h2>
+    <h2 style="margin-bottom: 5rem;">Dashboard</h2>
 
-    <div class="card">
-      <h3 class="card-title">History Trips</h3>
-      <div class="card-text">
-        <ul>
-          <li>Trip 1</li>
-          <li>Trip 2</li>
-          <li>Trip 3</li>
-        </ul>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <h3 class="card-title">History Trips</h3>
+          <div class="card-text">
+            <ul>
+              <li>Trip 1</li>
+              <li>Trip 2</li>
+              <li>Trip 3</li>
+            </ul>
+          </div>
+          <div class="button-container">
+            <a href="history-trips" class="btn btn-primary button">View All</a>
+          </div>
+        </div>
       </div>
-      <div class="button-container">
-        <a href="history-trips" class="btn btn-primary button">View All</a>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <h3 class="card-title">Profile</h3>
+          <div class="card-text">
+            <p>Name: John Doe</p>
+            <p>Email: john.doe@example.com</p>
+            <p>Location: New York</p>
+          </div>
+          <div class="button-container">
+            <a href="edit-profile" class="btn btn-primary button">Edit Profile</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <h3 class="card-title">Suggested Places to Travel</h3>
+          <div class="card-text">
+            <ul>
+              <li>Place 1</li>
+              <li>Place 2</li>
+              <li>Place 3</li>
+            </ul>
+          </div>
+          <div class="button-container">
+            <a href="suggested-places" class="btn btn-primary button">Explore More</a>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="card">
-      <h3 class="card-title">Profile</h3>
-      <div class="card-text">
-        <p>Name: John Doe</p>
-        <p>Email: john.doe@example.com</p>
-        <p>Location: New York</p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <h3 class="card-title">Upcoming Trips</h3>
+          <div class="card-text">
+            <ul>
+              <li>Trip 4</li>
+              <li>Trip 5</li>
+              <li>Trip 6</li>
+            </ul>
+          </div>
+          <div class="button-container">
+            <a href="upcoming-trips" class="btn btn-primary button">View All</a>
+          </div>
+        </div>
       </div>
-      <div class="button-container">
-        <a href="edit-profile" class="btn btn-primary button">Edit Profile</a>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <h3 class="card-title">Recent Activity</h3>
+          <div class="card-text">
+            <ul>
+              <li>Activity 1</li>
+              <li>Activity 2</li>
+              <li>Activity 3</li>
+            </ul>
+          </div>
+          <div class="button-container">
+            <a href="recent-activity" class="btn btn-primary button">View All</a>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="card">
-      <h3 class="card-title">Suggested Places to Travel</h3>
-      <div class="card-text">
-        <ul>
-          <li>Place 1</li>
-          <li>Place 2</li>
-          <li>Place 3</li>
-        </ul>
-      </div>
-      <div class="button-container">
-        <a href="suggested-places" class="btn btn-primary button">Explore More</a>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <h3 class="card-title">Notifications</h3>
+          <div class="card-text">
+            <ul>
+              <li>Notification 1</li>
+              <li>Notification 2</li>
+              <li>Notification 3</li>
+            </ul>
+          </div>
+          <div class="button-container">
+            <a href="notifications" class="btn btn-primary button">View All</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
