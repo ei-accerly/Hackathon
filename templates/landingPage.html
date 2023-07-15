@@ -1,59 +1,184 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>My Tourism Website</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <title>Travel Trails</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/css/bootstrap-select.min.css">
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: #343a40;
+    }
+
+    .navbar-brand {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .nav-link {
+      color: #fff;
+      font-size: 1.2rem;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    h2 {
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .form-control {
+      border-radius: 0;
+    }
+
+    .bootstrap-select .dropdown-toggle:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .bootstrap-select .dropdown-menu {
+      max-height: 200px;
+      overflow-y: auto;
+      border-radius: 0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .bootstrap-select .dropdown-menu li a {
+      padding: 0.5rem 1rem;
+      color: #333;
+      font-weight: normal;
+      white-space: nowrap;
+    }
+
+    .bootstrap-select .dropdown-menu li a:hover,
+    .bootstrap-select .dropdown-menu li a:focus {
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    .bootstrap-select .dropdown-menu li a.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .bootstrap-select .bs-searchbox .form-control {
+      border-radius: 0;
+      margin-bottom: 0.5rem;
+      text-align: center; /* Added */
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
+
 <body>
-  <header class="bg-dark text-light py-4">
+  <header class="navbar navbar-dark bg-dark py-4">
     <div class="container">
-      <h1>Welcome to My Tourism Website</h1>
-      <nav>
-        <ul class="nav">
+      <h1 class="navbar-brand">Travel Trails</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
           <li class="nav-item"><a class="nav-link" href="#tours">Tours</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-      </nav>
+      </div>
     </div>
   </header>
 
-  <section id="home" class="py-5">
+  <section id="home">
     <div class="container">
-      <h2>Explore the World with Us</h2>
-      <p>Welcome to our tourism website! Discover amazing destinations, book exciting tours, and create lifelong memories.</p>
+      <h2 class="text-center">Explore the World with Us</h2>
+      <p class="text-center">Welcome to our tourism website! Discover amazing destinations, book exciting tours, and
+        create lifelong memories.</p>
+      <p class="text-center">Whether you're seeking adventure, relaxation, or cultural experiences, we have something for
+        everyone.</p>
     </div>
   </section>
 
-  <section id="destinations" class="py-5">
+  <section id="destinations" class="bg-light">
     <div class="container">
-      <h2>Popular Destinations</h2>
-      <ul>
-        <li>Destination 1</li>
-        <li>Destination 2</li>
-        <li>Destination 3</li>
-        <li>Destination 4</li>
-      </ul>
+      <h2 class="text-center">Popular Destinations</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="input-group mb-3">
+            <button type="button" class="btn btn-outline-secondary">Search</button>
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">country 1</a></li>
+              <li><a class="dropdown-item" href="#">country 2</a></li>
+              <li><a class="dropdown-item" href="#">country 3</a></li>
+            </ul>
+            <input type="text" class="form-control text-center" placeholder="search country" aria-label="Text input with segmented dropdown button">
+          </div>
+          <div class="input-group mb-3">
+            <button type="button" class="btn btn-outline-secondary">Search</button>
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">destination 1</a></li>
+              <li><a class="dropdown-item" href="#">destination 2</a></li>
+              <li><a class="dropdown-item" href="#">destination 3</a></li>
+            </ul>
+            <input type="text" class="form-control text-center" placeholder="search destination" aria-label="Text input with segmented dropdown button">
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <section id="tours" class="py-5">
+  <section id="contact">
     <div class="container">
-      <h2>Featured Tours</h2>
-      <ul>
-        <li>Tour 1</li>
-        <li>Tour 2</li>
-        <li>Tour 3</li>
-        <li>Tour 4</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="contact" class="py-5">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <p>For inquiries and bookings, please fill out the form below or contact us directly:</p>
+      <h2 class="text-center">Contact Us</h2>
+      <p class="text-center">For inquiries and bookings, please fill out the form below or contact us directly:</p>
       <form>
         <div class="mb-3">
           <input type="text" class="form-control" placeholder="Name" required>
@@ -64,7 +189,9 @@
         <div class="mb-3">
           <textarea class="form-control" placeholder="Message" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
       </form>
     </div>
   </section>
@@ -72,9 +199,15 @@
   <footer class="bg-dark text-light py-4">
     <div class="container">
       <p>&copy; 2023 My Tourism Website. All rights reserved.</p>
+      <p class="text-center">Start your journey today and make memories that will last a lifetime!</p>
     </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0/js/bootstrap-select.min.js"></script>
+  <script>
+
+  </script>
 </body>
+
 </html>
