@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Seeker App</title>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+  <!-- Add Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Add custom CSS -->
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+    
+    .navbar {
+      background-color: #4e54c8;
+    }
+    
+    .navbar-brand {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    .navbar-nav .nav-link {
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    
+    .jumbotron {
+      background: radial-gradient(circle, #4e54c8, #8f94fb, #c3bef0);
+      padding: 100px 0;
+      text-align: center;
+      color: #fff;
+    }
+    
+    .jumbotron h1 {
+      font-size: 60px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    
+    .jumbotron p {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    
+    .feature-section {
+      padding: 80px 0;
+      background-color: #fff;
+    }
+    
+    .feature-section h2 {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #4e54c8;
+    }
+    
+    .feature-item {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .feature-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #4e54c8;
+    }
+    
+    .feature-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #4e54c8;
+    }
+    
+    .feature-description {
+      font-size: 18px;
+      color: #4e54c8;
+    }
+    
+    .signup-section {
+      padding: 80px 0;
+      background-color: #f1f1f1;
+    }
+    
+    .signup-section h2 {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #4e54c8;
+    }
+    
+    .signup-option {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    .signup-option .option-icon {
+      font-size: 24px;
+      margin-right: 10px;
+      color: #4e54c8;
+    }
+    
+    .signup-option .option-text {
+      font-size: 18px;
+      font-weight: bold;
+      color: #4e54c8;
+    }
+    
+    .signup-form {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .signup-form h2 {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #4e54c8;
+    }
+    
+    .signup-form .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .signup-form label {
+      font-weight: bold;
+    }
+    
+    .signup-form input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    
+    .signup-form input[type="submit"] {
+      background-color: #4e54c8;
+      border-color: #4e54c8;
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    .signup-form input[type="submit"]:hover {
+      background-color: #3e47a8;
+      border-color: #3e47a8;
+    }
+    
+    .faq-section {
+      padding: 80px 0;
+      background-color: #fff;
+    }
+    
+    .faq-section h2 {
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #4e54c8;
+    }
+    
+    .faq-item {
+      margin-bottom: 30px;
+    }
+    
+    .faq-question {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #4e54c8;
+      cursor: pointer;
+    }
+    
+    .faq-answer {
+      font-size: 18px;
+      color: #4e54c8;
+      display: none;
+    }
+    
+    .footer {
+      background-color: #4e54c8;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .footer p {
+      color: #fff;
+      margin: 0;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes slideUp {
+      from {
+        transform: translateY(20px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a href="#" class="navbar-brand">Job Seeker App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="#features" class="nav-link">Features</a>
+          </li>
+          <li class="nav-item">
+            <a href="#signup" class="nav-link">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a href="#faq" class="nav-link">FAQs</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome to Job Seeker App</h1>
+      <p>Connect job seekers with companies hiring for their dream jobs.</p>
+      <a href="#signup" class="btn btn-primary btn-lg">Get Started</a>
+    </div>
+  </div>
+
+  <div class="feature-section" id="features">
+    <div class="container">
+      <h2>Key Features</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature-item">
+            <span class="feature-icon">📄</span>
+            <h3 class="feature-title">Job Listings</h3>
+            <p class="feature-description">Browse a wide range of job listings from various industries and sectors.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-item">
+            <span class="feature-icon">🎯</span>
+            <h3 class="feature-title">Advanced Search</h3>
+            <p class="feature-description">Refine your job search with advanced filters to find the perfect match.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-item">
+            <span class="feature-icon">💌</span>
+            <h3 class="feature-title">Application Tracking</h3>
+            <p class="feature-description">Track your job applications and manage the hiring process in one place.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="signup-section" id="signup">
+    <div class="container">
+      <h2 class="text-center">Sign Up for Job Seeker App</h2>
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="signup-form">
+            <h2 class="text-center">Applicant Sign Up</h2>
+            <form>
+              <div class="form-group">
+                <label for="applicant-email">Email</label>
+                <input type="email" id="applicant-email" name="applicant-email" required>
+              </div>
+              <div class="form-group">
+                <label for="applicant-password">Password</label>
+                <input type="password" id="applicant-password" name="applicant-password" required>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Sign Up" class="btn btn-primary">
+              </div>
+              <p class="text-center">Already have an account? <a href="#signin">Sign in here</a></p>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 mx-auto">
+          <div class="signup-form">
+            <h2 class="text-center">Company Sign Up</h2>
+            <form>
+              <div class="form-group">
+                <label for="company-email">Email</label>
+                <input type="email" id="company-email" name="company-email" required>
+              </div>
+              <div class="form-group">
+                <label for="company-password">Password</label>
+                <input type="password" id="company-password" name="company-password" required>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Sign Up" class="btn btn-primary">
+              </div>
+              <p class="text-center">Already have an account? <a href="#signin">Sign in here</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-section" id="faq">
+    <div class="container">
+      <h2 class="text-center">Frequently Asked Questions</h2>
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">How can I find job listings?</div>
+            <div class="faq-answer">You can easily find job listings by browsing through the available options in the Job Listings section.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Can I track my job applications?</div>
+            <div class="faq-answer">Yes, you can track your job applications and manage them conveniently in the Application Tracking feature.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(this)">Is my personal information secure?</div>
+            <div class="faq-answer">We prioritize the security and privacy of your personal information and employ industry-standard measures to ensure its protection.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 Job Seeker App. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Add Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleAnswer(element) {
+      element.nextElementSibling.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>
